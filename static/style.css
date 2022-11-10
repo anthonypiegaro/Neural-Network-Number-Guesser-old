@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#guess {
+    font-size: 36px;
+}
+
+#content-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    width: 90%;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    grid-template-rows: repeat(28, 1fr);
+    width: 70%;
+    height: 70%;
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: -4px -3px 45px 21px rgba(0,0,0,0.35);
+}
+
+.cell {
+    border: 1px solid black;
+}
+
+.cell:hover {
+    background-color: rgba(26, 40, 255, 0.36);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.button {
+    background: none;
+    border: none;
+    padding: 20px 50px;
+    font-size: 14px;
+    position: relative;
+    color: #000;
+}
+
+.button::before, .button::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border: 3px solid #000;
+    content: "";
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    transition: transform 0.3s ease;
+}
+
+.button:hover::before {
+    transform: translate(-5px, -5px);
+}
+
+.button:hover::after {
+    transform: translate(5px, 5px);
+}
+
+.guess {
+    height: 10%;
+    margin-bottom: 5%;
+}
